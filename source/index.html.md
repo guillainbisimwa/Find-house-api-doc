@@ -124,6 +124,89 @@ Remember — if you post successfully, then you gonna have your API key!
 
 ## login
 
+> login an existing user - get token from here
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/auth/login")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request.body = "{
+    \"email\": \"guy@email.com\",
+    \"password\": \"1234\"
+}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "POST",
+  url: "https://find-your-house-backend.herokuapp.com/auth/login",
+  params: {},
+  headers: {
+    "content-type": "application/json",
+  },
+  data: {
+    email: "guy@email.com",
+    password: "1234",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "auth_token": "*************"
+}
+```
+
+> Make sure that your API key is located in `auth_token`. In our our case id `*************`
+
+FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: *************`
+
+This endpoint log in an existing user
+
+### HTTP Request
+
+`POST https://find-your-house-backend.herokuapp.com/auth/login`
+
+### Query Parameters
+
+| Parameter | Type   | Description                                         |
+| --------- | ------ | --------------------------------------------------- |
+| email     | string | An adress mail. It's must be unique in our database |
+| password  | string | A password                                          |
+
+<aside class="success">
+Remember — if you post successfully, then you gonna have your API key!
+</aside>
+
+<aside class="warning"> If you faild to signup, you'll get this validation message: <code>&lt;"Invalid credentials"&gt;</code></aside>
+
 ## logout
 
 > To authorize, use this code:
