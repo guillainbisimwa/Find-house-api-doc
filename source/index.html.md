@@ -329,9 +329,9 @@ axios
   {
     "id": 3,
     "price": 200.0,
-    "details": "Luxiry",
+    "details": "Details 1",
     "about": "Kin house",
-    "picture": "www,gbsismwa.me",
+    "picture": "www.gbsismwa.me",
     "owner": "1",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
@@ -339,9 +339,9 @@ axios
   {
     "id": 5,
     "price": 800.0,
-    "details": "Goma",
+    "details": "Details 3",
     "about": "G house",
-    "picture": "www,gbsismwa.me",
+    "picture": "www.gbsismwa.me",
     "owner": "3",
     "created_at": "2021-05-03T18:11:58.211Z",
     "updated_at": "2021-05-03T18:11:58.211Z"
@@ -355,109 +355,24 @@ This endpoint retrieves all houses.
 
 ### HTTP Request
 
-`POST https://find-your-house-backend.herokuapp.com/houses`
+`GET https://find-your-house-backend.herokuapp.com/houses`
 
 ## Get a specific house
 
-> login an existing user - get token from here
+> This endpoint retrieves a specific houses.
 
 ```ruby
 require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://find-your-house-backend.herokuapp.com/auth/login")
+url = URI("https://find-your-house-backend.herokuapp.com/houses/2")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-request = Net::HTTP::Post.new(url)
-request["content-type"] = 'application/json'
-request.body = "{
-    \"email\": \"guy@email.com\",
-    \"password\": \"1234\"
-}"
-
-response = http.request(request)
-puts response.read_body
-```
-
-```javascript
-import axios from "axios";
-
-const options = {
-  method: "POST",
-  url: "https://find-your-house-backend.herokuapp.com/auth/login",
-  params: {},
-  headers: {
-    "content-type": "application/json",
-  },
-  data: {
-    email: "guy@email.com",
-    password: "1234",
-  },
-};
-
-axios
-  .request(options)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "auth_token": "*************"
-}
-```
-
-> Make sure that your API key is located in `auth_token`. In our our case id `*************`
-
-FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: *************`
-
-This endpoint log in an existing user
-
-### HTTP Request
-
-`POST https://find-your-house-backend.herokuapp.com/auth/login`
-
-### Query Parameters
-
-| Parameter | Type   | Description                                         |
-| --------- | ------ | --------------------------------------------------- |
-| email     | string | An adress mail. It's must be unique in our database |
-| password  | string | A password                                          |
-
-<aside class="success">
-Remember — if you post successfully, then you gonna have your API key!
-</aside>
-
-<aside class="warning"> If you faild to signup, you'll get this validation message: <code>&lt;"Invalid credentials"&gt;</code></aside>
-
-## logout
-
-> logout a connected user - use your token
-
-```ruby
-require 'uri'
-require 'net/http'
-require 'openssl'
-
-url = URI("https://find-your-house-backend.herokuapp.com/users/sign_out")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Delete.new(url)
+request = Net::HTTP::Get.new(url)
 request["authorization"] = "*************",
 
 response = http.request(request)
@@ -468,8 +383,8 @@ puts response.read_body
 import axios from "axios";
 
 const options = {
-  method: "DELETE",
-  url: "https://find-your-house-backend.herokuapp.com/users/sign_out",
+  method: "GET",
+  url: "https://find-your-house-backend.herokuapp.com/houses/2",
   headers: {
     authorization: "*************",
   },
@@ -488,159 +403,30 @@ axios
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "status": "success",
-  "message": "Signed out successfully"
-}
-```
-
-> Make sure to replace `****************` with your API key.
-
-FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: *************`
-
-This endpoint logout an user
-
-### HTTP Request
-
-`DELETE https://find-your-house-backend.herokuapp.com/users/sign_out`
-
-> If you faild to logout, you'll get this message:
-
-```json
-{
-  "status": "error",
-  "error": "Access token is missing in the request"
-}
-```
-
-# Kittens
-
-## Get All Kittens
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require("kittn");
-
-let api = kittn.authorize("meowmeowmeow");
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "price": 200.0,
+    "details": "Details House",
+    "about": "Kin house",
+    "picture": "www.gbsismwa.me",
+    "owner": "1",
+    "created_at": "2021-05-03T09:14:30.922Z",
+    "updated_at": "2021-05-03T09:14:30.922Z"
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+> Make sure to replace `****************` with your API key.
+
+This endpoint retrieves all houses.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://find-your-house-backend.herokuapp.com/houses/<ID>`
 
-### Query Parameters
+### Url Parameter
 
-| Parameter    | Default | Description                                                                      |
-| ------------ | ------- | -------------------------------------------------------------------------------- |
-| include_cats | false   | If set to true, the result will also include cats.                               |
-| available    | true    | If set to false, the result will include kittens that have already been adopted. |
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require("kittn");
-
-let api = kittn.authorize("meowmeowmeow");
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-| Parameter | Description                      |
-| --------- | -------------------------------- |
-| ID        | The ID of the kitten to retrieve |
-
-## Delete a Specific Kitten
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require("kittn");
-
-let api = kittn.authorize("meowmeowmeow");
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted": ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-| Parameter | Description                    |
-| --------- | ------------------------------ |
-| ID        | The ID of the kitten to delete |
+| Parameter | Type    | Description                     |
+| --------- | ------- | ------------------------------- |
+| ID        | integer | The ID of the house to retrieve |
