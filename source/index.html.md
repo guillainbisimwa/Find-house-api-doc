@@ -425,6 +425,166 @@ This endpoint retrieves all houses.
 
 `GET https://find-your-house-backend.herokuapp.com/houses/<ID>`
 
+### Url Parameters
+
+| Parameter | Type    | Description                     |
+| --------- | ------- | ------------------------------- |
+| ID        | integer | The ID of the house to retrieve |
+
+# Favorite
+
+## Get all user favorites
+
+> This endpoint retrieves all user favorites.
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/users/3/favourites")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = "*************",
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "GET",
+  url: "https://find-your-house-backend.herokuapp.com/users/3/favourites",
+  headers: {
+    authorization: "*************",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 3,
+    "price": 200.0,
+    "details": "Details 1",
+    "about": "Kin house",
+    "picture": "www.gbsismwa.me",
+    "owner": "1",
+    "created_at": "2021-05-03T09:14:30.922Z",
+    "updated_at": "2021-05-03T09:14:30.922Z"
+  },
+  {
+    "id": 5,
+    "price": 800.0,
+    "details": "Details 3",
+    "about": "G house",
+    "picture": "www.gbsismwa.me",
+    "owner": "3",
+    "created_at": "2021-05-03T18:11:58.211Z",
+    "updated_at": "2021-05-03T18:11:58.211Z"
+  }
+]
+```
+
+> Make sure to replace `****************` with your API key.
+
+This endpoint retrieves all user favorites
+
+### HTTP Request
+
+`GET https://find-your-house-backend.herokuapp.com/users/<USERID>/favourites`
+
+### Url Parameters
+
+| Parameter | Type    | Description        |
+| --------- | ------- | ------------------ |
+| USERID    | integer | The ID of the user |
+
+## Get a specific house
+
+> This endpoint retrieves a specific houses.
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/houses/2")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = "*************",
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "GET",
+  url: "https://find-your-house-backend.herokuapp.com/houses/2",
+  headers: {
+    authorization: "*************",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 2,
+    "price": 200.0,
+    "details": "Details House",
+    "about": "Kin house",
+    "picture": "www.gbsismwa.me",
+    "owner": "1",
+    "created_at": "2021-05-03T09:14:30.922Z",
+    "updated_at": "2021-05-03T09:14:30.922Z"
+  }
+]
+```
+
+> Make sure to replace `****************` with your API key.
+
+This endpoint retrieves all houses.
+
+### HTTP Request
+
+`GET https://find-your-house-backend.herokuapp.com/houses/<ID>`
+
 ### Url Parameter
 
 | Parameter | Type    | Description                     |
