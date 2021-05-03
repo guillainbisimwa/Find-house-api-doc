@@ -17,8 +17,8 @@ We have language bindings in Ruby, and JavaScript! You can view code examples in
 
 ## API AND DOCUMENTATION LINKS
 
-[API Documentation](http://gbisimwa.me/Find-house-api-doc/)
-[API Live Demo Link](https://find-your-house-backend.herokuapp.com/)
+- [API Documentation](http://gbisimwa.me/Find-house-api-doc/)
+- [API Live Demo Link](https://find-your-house-backend.herokuapp.com/)
 
 ## Dependencies
 
