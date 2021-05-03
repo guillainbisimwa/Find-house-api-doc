@@ -16,7 +16,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to the FIND YOUR HOUSE API! You can use our API to access FIND YOUR HOUSE API endpoints, which can get information on various houses in our database.
+Welcome to the FIND YOUR HOUSE API portal. The objective of this site is to make data, including imagery, eminently accessible to application developers.
 
 The FIND YOUR HOUSE API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 

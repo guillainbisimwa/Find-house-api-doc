@@ -7,9 +7,7 @@
 
 > This project started as a fork of the popular [Slate](https://github.com/tripit/slate) API documentation tool, which uses ruby.
 
-Welcome to the FIND YOUR HOUSE API! You can use our API to access FIND YOUR HOUSE API endpoints, which can get information on various houses in our database.
-
-The FIND YOUR HOUSE API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+Welcome to the FIND YOUR HOUSE API portal. The objective of this site is to make data, including imagery, eminently accessible to application developers.
 
 We have language bindings in Ruby, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
