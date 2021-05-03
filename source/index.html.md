@@ -1,19 +1,16 @@
 ---
-title: API Reference
-
-language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
-  - ruby
-
+noteId: "df220f70ac4e11ebae90cb6b7a3e51d7"
+tags: []
+title: "API Reference"
+language_tabs:
+  - "javascript"
+  - "ruby"
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
+  - "<a href='#'>Sign Up for a Developer Key</a>"
+  - "<a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>"
 includes:
-  - errors
-
+  - "errors"
 search: true
-
 code_clipboard: true
 ---
 
@@ -209,29 +206,76 @@ Remember — if you post successfully, then you gonna have your API key!
 
 ## logout
 
-> To authorize, use this code:
+> logout a connected user - use your token
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/users/sign_out")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Delete.new(url)
+request["authorization"] = "*************",
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```javascript
-const kittn = require("kittn");
+import axios from "axios";
 
-let api = kittn.authorize("****************");
+const options = {
+  method: "DELETE",
+  url: "https://find-your-house-backend.herokuapp.com/users/sign_out",
+  headers: {
+    authorization: "*************",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "message": "Signed out successfully"
+}
 ```
 
 > Make sure to replace `****************` with your API key.
 
 FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: *************`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+This endpoint logout an user
+
+### HTTP Request
+
+`DELETE https://find-your-house-backend.herokuapp.com/users/sign_out`
+
+> If you faild to logout, you'll get this message:
+
+```json
+{
+  "status": "error",
+  "error": "Access token is missing in the request"
+}
+```
 
 # Kittens
 
