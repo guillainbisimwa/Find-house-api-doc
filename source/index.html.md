@@ -431,7 +431,7 @@ This endpoint retrieves all houses.
 | --------- | ------- | ------------------------------- |
 | ID        | integer | The ID of the house to retrieve |
 
-# Favorite
+# Favorites
 
 ## Get all user favorites
 
