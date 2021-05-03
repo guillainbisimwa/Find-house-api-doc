@@ -1,3 +1,9 @@
+---
+noteId: "72ef3870ac0b11eb8bd07b54806afef9"
+tags: []
+
+---
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/slatedocs/img/main/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
   <br>
