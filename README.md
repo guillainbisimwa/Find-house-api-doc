@@ -117,6 +117,15 @@ The second option (building html files), run:
 bundle exec middleman build
 ```
 
+## Publishing Your Docs to GitHub Pages
+
+Publishing your API documentation couldn't be more simple.
+
+1. Make sure you're working on a fork in your own account, not our original repo: `git remote show origin`.
+2. Commit your changes to the markdown source: `git commit -a -m "Update index.md"`
+3. Push the markdown source changes to GitHub: `git push`
+4. Run `./deploy.sh`
+
 ## What Now?
 
 The next step is to [learn how to edit `source/index.md` to change the content of your docs](Markdown-Syntax). Once you're done, you might want to think about [deploying your docs](https://github.com/slatedocs/slate/wiki/Deploying-Slate).
@@ -139,6 +148,8 @@ Found a bug with upstream Slate? Go ahead and [submit an issue](https://github.c
 ## Contributors
 
 Slate was built by [Robert Lord](https://lord.io) while at [TripIt](https://www.tripit.com/). The project is now maintained by [Matthew Peveler](https://github.com/MasterOdin) and [Mike Ralphson](https://github.com/MikeRalphson).
+
+Thanks to [X1011](https://github.com/X1011/git-directory-deploy) for the excellent deploy script.
 
 FIND YOUR HOUSE API was built by :
 
