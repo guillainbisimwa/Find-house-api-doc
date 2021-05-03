@@ -517,16 +517,16 @@ This endpoint retrieves all user favorites
 | --------- | ------- | ------------------ |
 | USERID    | integer | The ID of the user |
 
-## Get a specific house
+## Get a specific user favorite
 
-> This endpoint retrieves a specific houses.
+> This endpoint retrieves a specific user favorite.
 
 ```ruby
 require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://find-your-house-backend.herokuapp.com/houses/2")
+url = URI("https://find-your-house-backend.herokuapp.com/users/3/favourites")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -544,7 +544,7 @@ import axios from "axios";
 
 const options = {
   method: "GET",
-  url: "https://find-your-house-backend.herokuapp.com/houses/2",
+  url: "https://find-your-house-backend.herokuapp.com/users/3/favourites",
   headers: {
     authorization: "*************",
   },
@@ -565,7 +565,7 @@ axios
 ```json
 [
   {
-    "id": 2,
+    "id": 3,
     "price": 200.0,
     "details": "Details House",
     "about": "Kin house",
@@ -579,14 +579,15 @@ axios
 
 > Make sure to replace `****************` with your API key.
 
-This endpoint retrieves all houses.
+This endpoint retrieves a specific user favorite.
 
 ### HTTP Request
 
-`GET https://find-your-house-backend.herokuapp.com/houses/<ID>`
+`GET https://find-your-house-backend.herokuapp.com/users/<USERID>/favourites/<ID>`
 
 ### Url Parameter
 
-| Parameter | Type    | Description                     |
-| --------- | ------- | ------------------------------- |
-| ID        | integer | The ID of the house to retrieve |
+| Parameter | Type    | Description                                          |
+| --------- | ------- | ---------------------------------------------------- |
+| ID        | integer | The ID of a specific user favorite house to retrieve |
+| USERID    | integer | The ID of the user                                   |
