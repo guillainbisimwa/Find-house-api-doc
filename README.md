@@ -1,17 +1,24 @@
 # FIND YOUR HOUSE API
 
 <p align="center">
-  <img src="./source/images/Screenshot.png" alt="API Documentation" width="226">
+  <img src="./source/images/logo.png" alt="API Documentation" width="226">
   <br>
 </p>
 
-> Welcome to the FIND YOUR HOUSE API! You can use our API to access FIND YOUR HOUSE API endpoints, which can get information on various houses in our database.
+> This project started as a fork of the popular [Slate](https://github.com/tripit/slate) API documentation tool, which uses ruby.
+
+Welcome to the FIND YOUR HOUSE API! You can use our API to access FIND YOUR HOUSE API endpoints, which can get information on various houses in our database.
 
 The FIND YOUR HOUSE API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
 We have language bindings in Ruby, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 <img src="./source/images/Screenshot.png" alt="Screenshot" style="margin: auto; display: block">
+
+## API AND DOCUMENTATION LINKS
+
+[API Documentation](http://gbisimwa.me/Find-house-api-doc/)
+[API Live Demo Link](https://find-your-house-backend.herokuapp.com/)
 
 ## Dependencies
 
@@ -120,12 +127,6 @@ The next step is to [learn how to edit `source/index.md` to change the content o
 - [Sony](http://developers.cimediacloud.com)
 - [Best Buy](https://bestbuyapis.github.io/api-documentation/)
 - [Travis-CI](https://docs.travis-ci.com/api/)
-- [Greenhouse](https://developers.greenhouse.io/harvest.html)
-- [WooCommerce](http://woocommerce.github.io/woocommerce-rest-api-docs/)
-- [Dwolla](https://docs.dwolla.com/)
-- [Clearbit](https://clearbit.com/docs)
-- [Coinbase](https://developers.coinbase.com/api)
-- [Parrot Drones](http://developer.parrot.com/docs/bebop/)
 
 You can view more in [the list on the wiki](https://github.com/slatedocs/slate/wiki/Slate-in-the-Wild).
 
@@ -139,11 +140,14 @@ Found a bug with upstream Slate? Go ahead and [submit an issue](https://github.c
 
 Slate was built by [Robert Lord](https://lord.io) while at [TripIt](https://www.tripit.com/). The project is now maintained by [Matthew Peveler](https://github.com/MasterOdin) and [Mike Ralphson](https://github.com/MikeRalphson).
 
-Thanks to the following people who have submitted major pull requests:
+FIND YOUR HOUSE API was built by :
 
-- [@chrissrogers](https://github.com/chrissrogers)
-- [@bootstraponline](https://github.com/bootstraponline)
-- [@realityking](https://github.com/realityking)
-- [@cvkef](https://github.com/cvkef)
+👤 **Guillain Bisimwa**
 
-Also, thanks to [Sauce Labs](http://saucelabs.com) for sponsoring the development of the responsive styles.
+- Github : [@guillainbisimwa](https://github.com/guillainbisimwa)
+- Twitter : [@gullain_bisimwa](https://twitter.com/gullain_bisimwa)
+- Linkedin : [guillain-bisimwa](https://www.linkedin.com/in/guillain-bisimwa-8a8b7a7b/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
