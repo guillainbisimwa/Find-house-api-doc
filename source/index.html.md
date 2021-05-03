@@ -277,6 +277,244 @@ This endpoint logout an user
 }
 ```
 
+# Houses
+
+## Get all houses
+
+> This endpoint retrieves all houses.
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/houses")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = "*************",
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "GET",
+  url: "https://find-your-house-backend.herokuapp.com/houses",
+  headers: {
+    authorization: "*************",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 3,
+    "price": 200.0,
+    "details": "Luxiry",
+    "about": "Kin house",
+    "picture": "www,gbsismwa.me",
+    "owner": "1",
+    "created_at": "2021-05-03T09:14:30.922Z",
+    "updated_at": "2021-05-03T09:14:30.922Z"
+  },
+  {
+    "id": 5,
+    "price": 800.0,
+    "details": "Goma",
+    "about": "G house",
+    "picture": "www,gbsismwa.me",
+    "owner": "3",
+    "created_at": "2021-05-03T18:11:58.211Z",
+    "updated_at": "2021-05-03T18:11:58.211Z"
+  }
+]
+```
+
+> Make sure to replace `****************` with your API key.
+
+This endpoint retrieves all houses.
+
+### HTTP Request
+
+`POST https://find-your-house-backend.herokuapp.com/houses`
+
+## Get a specific house
+
+> login an existing user - get token from here
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/auth/login")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request.body = "{
+    \"email\": \"guy@email.com\",
+    \"password\": \"1234\"
+}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "POST",
+  url: "https://find-your-house-backend.herokuapp.com/auth/login",
+  params: {},
+  headers: {
+    "content-type": "application/json",
+  },
+  data: {
+    email: "guy@email.com",
+    password: "1234",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "auth_token": "*************"
+}
+```
+
+> Make sure that your API key is located in `auth_token`. In our our case id `*************`
+
+FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: *************`
+
+This endpoint log in an existing user
+
+### HTTP Request
+
+`POST https://find-your-house-backend.herokuapp.com/auth/login`
+
+### Query Parameters
+
+| Parameter | Type   | Description                                         |
+| --------- | ------ | --------------------------------------------------- |
+| email     | string | An adress mail. It's must be unique in our database |
+| password  | string | A password                                          |
+
+<aside class="success">
+Remember — if you post successfully, then you gonna have your API key!
+</aside>
+
+<aside class="warning"> If you faild to signup, you'll get this validation message: <code>&lt;"Invalid credentials"&gt;</code></aside>
+
+## logout
+
+> logout a connected user - use your token
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/users/sign_out")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Delete.new(url)
+request["authorization"] = "*************",
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "DELETE",
+  url: "https://find-your-house-backend.herokuapp.com/users/sign_out",
+  headers: {
+    authorization: "*************",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "message": "Signed out successfully"
+}
+```
+
+> Make sure to replace `****************` with your API key.
+
+FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: *************`
+
+This endpoint logout an user
+
+### HTTP Request
+
+`DELETE https://find-your-house-backend.herokuapp.com/users/sign_out`
+
+> If you faild to logout, you'll get this message:
+
+```json
+{
+  "status": "error",
+  "error": "Access token is missing in the request"
+}
+```
+
 # Kittens
 
 ## Get All Kittens
