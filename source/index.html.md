@@ -2,8 +2,8 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
   - javascript
+  - ruby
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -21,9 +21,110 @@ code_clipboard: true
 
 Welcome to the FIND YOUR HOUSE API! You can use our API to access FIND YOUR HOUSE API endpoints, which can get information on various houses in our database.
 
-We have language bindings in Shell, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The FIND YOUR HOUSE API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+We have language bindings in Ruby, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 # Authentication
+
+Our API is able to support user accounts with each user having the ability managing their own resources.
+In order to get your API key, you need to Signup or login!
+
+## Signup
+
+> Signup a new user - get token from here
+
+```ruby
+require 'uri'
+require 'net/http'
+require 'openssl'
+
+url = URI("https://find-your-house-backend.herokuapp.com/signup")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request.body = "{
+    \"name\": \"guy\",
+    \"email\": \"guy@email.com\",
+    \"password\": \"1234\",
+    \"password_confirmation\": \"1234\"
+}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: "POST",
+  url: "https://find-your-house-backend.herokuapp.com/signup",
+  params: {},
+  headers: {
+    "content-type": "application/json",
+  },
+  data: {
+    name: "guy",
+    email: "guy@email.com",
+    password: "1234",
+    password_confirmation: "1234",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "message": "Account created successfully",
+  "auth_token": "*************"
+}
+```
+
+> Make sure that your API key is located in `auth_token`. In our our case id `*************`
+
+FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: *************`
+
+This endpoint creates a new user.
+
+### HTTP Request
+
+`POST https://find-your-house-backend.herokuapp.com/signup`
+
+### Query Parameters
+
+| Parameter             | Type   | Description                                         |
+| --------------------- | ------ | --------------------------------------------------- |
+| name                  | string | Name of the user                                    |
+| email                 | string | An adress mail. It's must be unique in our database |
+| password              | string | A password                                          |
+| password_confirmation | string | A confirmation password.                            |
+
+<aside class="success">
+Remember — if you post successfully, then you gonna have your API key!
+</aside>
+
+<aside class="warning"> If you faild to signup, you'll get this validation message: <code>&lt;"Validation failed: Name can't be blank"&gt;</code></aside>
+
+## login
+
+## logout
 
 > To authorize, use this code:
 
@@ -36,14 +137,12 @@ curl "api_endpoint_here" \
 ```javascript
 const kittn = require("kittn");
 
-let api = kittn.authorize("meowmeowmeow");
+let api = kittn.authorize("****************");
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `****************` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+FIND YOUR HOUSE API expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
