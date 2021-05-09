@@ -526,7 +526,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-url = URI("https://find-your-house-backend.herokuapp.com/users/3/favourites")
+url = URI("https://find-your-house-backend.herokuapp.com/users/3/favourites/1")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -544,7 +544,7 @@ import axios from "axios";
 
 const options = {
   method: "GET",
-  url: "https://find-your-house-backend.herokuapp.com/users/3/favourites",
+  url: "https://find-your-house-backend.herokuapp.com/users/3/favourites/1",
   headers: {
     authorization: "*************",
   },
@@ -565,14 +565,12 @@ axios
 ```json
 [
   {
-    "id": 3,
-    "price": 200.0,
-    "details": "Details House",
-    "about": "Kin house",
-    "picture": "www.gbsismwa.me",
-    "owner": "1",
-    "created_at": "2021-05-03T09:14:30.922Z",
-    "updated_at": "2021-05-03T09:14:30.922Z"
+    "id": 6,
+    "name": "name",
+    "user_id": 1,
+    "house_id": 1,
+    "created_at": "2021-05-09T19:35:43.347Z",
+    "updated_at": "2021-05-09T19:35:43.347Z"
   }
 ]
 ```
