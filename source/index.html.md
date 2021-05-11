@@ -88,7 +88,8 @@ axios
 ```json
 {
   "message": "Account created successfully",
-  "auth_token": "*************"
+  "auth_token": "*************",
+  "id": "1"
 }
 ```
 
@@ -175,7 +176,8 @@ axios
 
 ```json
 {
-  "auth_token": "*************"
+  "auth_token": "*************",
+  "id": "1"
 }
 ```
 
@@ -329,9 +331,9 @@ axios
   {
     "id": 3,
     "price": 200.0,
-    "details": "Details 1",
-    "about": "Kin house",
-    "picture": "www.gbsismwa.me",
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "about": "House in Brgule, Serbia",
+    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
     "owner": "1",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
@@ -339,9 +341,9 @@ axios
   {
     "id": 5,
     "price": 800.0,
-    "details": "Details 3",
-    "about": "G house",
-    "picture": "www.gbsismwa.me",
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "about": "A single living house in Addis Ababa, Ethiopia",
+    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
     "owner": "3",
     "created_at": "2021-05-03T18:11:58.211Z",
     "updated_at": "2021-05-03T18:11:58.211Z"
@@ -407,9 +409,9 @@ axios
   {
     "id": 2,
     "price": 200.0,
-    "details": "Details House",
-    "about": "Kin house",
-    "picture": "www.gbsismwa.me",
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "about": "House in Brgule, Serbia",
+    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
     "owner": "1",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
@@ -483,9 +485,9 @@ axios
   {
     "id": 3,
     "price": 200.0,
-    "details": "Details 1",
-    "about": "Kin house",
-    "picture": "www.gbsismwa.me",
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "about": "House in Brgule, Serbia",
+    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
     "owner": "1",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
@@ -493,9 +495,9 @@ axios
   {
     "id": 5,
     "price": 800.0,
-    "details": "Details 3",
-    "about": "G house",
-    "picture": "www.gbsismwa.me",
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "about": "A single living house in Addis Ababa, Ethiopia",
+    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
     "owner": "3",
     "created_at": "2021-05-03T18:11:58.211Z",
     "updated_at": "2021-05-03T18:11:58.211Z"
