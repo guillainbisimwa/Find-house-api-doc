@@ -334,7 +334,7 @@ axios
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "about": "House in Brgule, Serbia",
     "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "1",
+    "owner": "Pixabay",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
   },
@@ -344,7 +344,7 @@ axios
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "about": "A single living house in Addis Ababa, Ethiopia",
     "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "3",
+    "owner": "Pixabay",
     "created_at": "2021-05-03T18:11:58.211Z",
     "updated_at": "2021-05-03T18:11:58.211Z"
   }
@@ -412,7 +412,7 @@ axios
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "about": "House in Brgule, Serbia",
     "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "1",
+    "owner": "Pixabay",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
   }
@@ -488,7 +488,7 @@ axios
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "about": "House in Brgule, Serbia",
     "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "1",
+    "owner": "Pixabay",
     "created_at": "2021-05-03T09:14:30.922Z",
     "updated_at": "2021-05-03T09:14:30.922Z"
   },
@@ -498,7 +498,7 @@ axios
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "about": "A single living house in Addis Ababa, Ethiopia",
     "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "3",
+    "owner": "Pixabay",
     "created_at": "2021-05-03T18:11:58.211Z",
     "updated_at": "2021-05-03T18:11:58.211Z"
   }
