@@ -483,24 +483,20 @@ axios
 ```json
 [
   {
-    "id": 3,
-    "price": 200.0,
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    "about": "House in Brgule, Serbia",
-    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "Pixabay",
-    "created_at": "2021-05-03T09:14:30.922Z",
-    "updated_at": "2021-05-03T09:14:30.922Z"
-  },
+    "id": 1,
+    "name": "name",
+    "user_id": 1,
+    "house_id": 2,
+    "created_at": "2021-05-09T19:35:43.347Z",
+    "updated_at": "2021-05-09T19:35:43.347Z"
+  }
   {
-    "id": 5,
-    "price": 800.0,
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    "about": "A single living house in Addis Ababa, Ethiopia",
-    "picture": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "owner": "Pixabay",
-    "created_at": "2021-05-03T18:11:58.211Z",
-    "updated_at": "2021-05-03T18:11:58.211Z"
+    "id": 6,
+    "name": "name",
+    "user_id": 1,
+    "house_id": 1,
+    "created_at": "2021-05-09T19:35:43.347Z",
+    "updated_at": "2021-05-09T19:35:43.347Z"
   }
 ]
 ```
